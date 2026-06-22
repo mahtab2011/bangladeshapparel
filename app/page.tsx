@@ -15,7 +15,18 @@ useEffect(() => {
     (localStorage.getItem("language") as LanguageCode) || "en";
 
   setLanguage(savedLanguage);
-}, []);
+
+  function handleLanguageChange(event: Event) {
+    const customEvent = event as CustomEvent<LanguageCode>;
+    setLanguage(customEvent.detail);
+  }
+
+  window.addEventListener("languageChange", handleLanguageChange);
+
+  return () => {
+    window.removeEventListener("languageChange", handleLanguageChange);
+  };
+}, []);npm run d
 
 const t = translations[language];
   const categories = [
@@ -71,31 +82,28 @@ const t = translations[language];
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <p className="mb-4 text-lg font-semibold uppercase tracking-widest">
-            Bangladesh Apparel Industry Portal
+            {t.heroBadge}
           </p>
 
           <h1 className="max-w-4xl text-5xl font-extrabold leading-tight md:text-7xl">
-            Connecting Global Buyers, Bangladesh Manufacturers and AI-Powered
-            Factory Intelligence
+            {t.heroTitle}
           </h1>
 
           <p className="mt-8 max-w-3xl text-xl text-green-100">
-            Discover garment manufacturers, textile mills, accessories
-            suppliers, sourcing partners and intelligent factory solutions from
-            Bangladesh.
+            {t.heroText}
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link href="/factories" className="rounded-2xl bg-white px-8 py-4 font-bold text-green-700">
-              Browse Factories
+              {t.browseFactories}
             </Link>
 
             <Link href="/buyer-centre" className="rounded-2xl border border-white px-8 py-4 font-bold text-white">
-              Buyer Centre
+              {t.buyerCentre}
             </Link>
 
             <Link href="/factory-signup" className="rounded-2xl bg-yellow-400 px-8 py-4 font-bold text-slate-900">
-              Register Your Factory
+              {t.registerFactory}
             </Link>
           </div>
         </div>
@@ -108,11 +116,11 @@ const t = translations[language];
       <section className="mx-auto max-w-7xl px-6 py-10">
         <div className="rounded-3xl bg-white p-6 shadow-xl">
           <h2 className="text-3xl font-bold text-slate-900">
-            Search Bangladesh Apparel Suppliers
-          </h2>
+            {t.searchTitle}
+          </h2>\
 
           <p className="mt-2 text-slate-600">
-            Find factories by product, location, certification, capacity or buyer requirement.
+            {t.searchText}
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-4">

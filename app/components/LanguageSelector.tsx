@@ -14,12 +14,15 @@ export default function LanguageSelector() {
   }, []);
 
   function changeLanguage(language: string) {
-    localStorage.setItem("language", language);
+  localStorage.setItem("language", language);
+  setSelectedLanguage(language);
 
-    setSelectedLanguage(language);
-
-    window.location.reload();
-  }
+  window.dispatchEvent(
+    new CustomEvent("languageChange", {
+      detail: language,
+    })
+  );
+}
 
   const languages = [
     { code: "en", label: "English" },
