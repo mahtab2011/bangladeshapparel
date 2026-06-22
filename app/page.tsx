@@ -26,7 +26,7 @@ useEffect(() => {
   return () => {
     window.removeEventListener("languageChange", handleLanguageChange);
   };
-}, []);npm run d
+}, []);
 
 const t = translations[language];
   const categories = [
@@ -117,7 +117,7 @@ const t = translations[language];
         <div className="rounded-3xl bg-white p-6 shadow-xl">
           <h2 className="text-3xl font-bold text-slate-900">
             {t.searchTitle}
-          </h2>\
+          </h2>
 
           <p className="mt-2 text-slate-600">
             {t.searchText}
