@@ -1,7 +1,23 @@
+"use client";
 import Link from "next/link";
 import LanguageSelector from "./components/LanguageSelector";
+import { useEffect, useState } from "react";
+import {
+  LanguageCode,
+  translations,
+} from "./lib/translations";
 
 export default function HomePage() {
+  const [language, setLanguage] = useState<LanguageCode>("en");
+
+useEffect(() => {
+  const savedLanguage =
+    (localStorage.getItem("language") as LanguageCode) || "en";
+
+  setLanguage(savedLanguage);
+}, []);
+
+const t = translations[language];
   const categories = [
     "Knitwear",
     "Woven Garments",
