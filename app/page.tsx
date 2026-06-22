@@ -1,79 +1,46 @@
 "use client";
+
 import Link from "next/link";
-import LanguageSelector from "./components/LanguageSelector";
 import { useEffect, useState } from "react";
-import {
-  LanguageCode,
-  translations,
-} from "./lib/translations";
+
+import LanguageSelector from "./components/LanguageSelector";
+import { LanguageCode, translations } from "./lib/translations";
 
 export default function HomePage() {
   const [language, setLanguage] = useState<LanguageCode>("en");
 
-useEffect(() => {
-  const savedLanguage =
-    (localStorage.getItem("language") as LanguageCode) || "en";
+  useEffect(() => {
+    const savedLanguage =
+      (localStorage.getItem("language") as LanguageCode) || "en";
 
-  setLanguage(savedLanguage);
+    setLanguage(savedLanguage);
 
-  function handleLanguageChange(event: Event) {
-    const customEvent = event as CustomEvent<LanguageCode>;
-    setLanguage(customEvent.detail);
-  }
+    function handleLanguageChange(event: Event) {
+      const customEvent = event as CustomEvent<LanguageCode>;
+      setLanguage(customEvent.detail);
+    }
 
-  window.addEventListener("languageChange", handleLanguageChange);
+    window.addEventListener("languageChange", handleLanguageChange);
 
-  return () => {
-    window.removeEventListener("languageChange", handleLanguageChange);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("languageChange", handleLanguageChange);
+    };
+  }, []);
 
-const t = translations[language];
-  const categories = [
-    "Knitwear",
-    "Woven Garments",
-    "Denim",
-    "Outerwear",
-    "Sportswear",
-    "Sweaters",
-    "Lingerie",
-    "Workwear",
-  ];
-
-  const accessories = [
-    "Buttons",
-    "Zippers",
-    "Labels",
-    "Elastic",
-    "Packaging",
-    "Cartons",
-    "Poly Bags",
-    "Thread",
-  ];
-
-  const factoryActions = [
-    "Create Factory Profile",
-    "Upload Photos & Videos",
-    "Show Certificates",
-    "Receive Buyer Inquiries",
-    "Track Profile Visitors",
-    "Show Production Capacity",
-    "Promote Product Categories",
-    "Build Export Credibility",
-  ];
+  const t = translations[language];
 
   const leadershipCards = [
     {
       title: "BGMEA",
-      text: "Represents the majority of Bangladesh apparel and textile manufacturers serving global brands.",
+      text: t.bgmeaText,
     },
     {
       title: "BKMEA",
-      text: "Represents Bangladesh knitwear manufacturers and exporters across the country.",
+      text: t.bkmeaText,
     },
     {
-      title: "Green Factories",
-      text: "Bangladesh is a global leader in LEED-certified sustainable garment manufacturing.",
+      title: t.greenFactories,
+      text: t.greenText,
     },
   ];
 
@@ -94,15 +61,24 @@ const t = translations[language];
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/factories" className="rounded-2xl bg-white px-8 py-4 font-bold text-green-700">
+            <Link
+              href="/factories"
+              className="rounded-2xl bg-white px-8 py-4 font-bold text-green-700"
+            >
               {t.browseFactories}
             </Link>
 
-            <Link href="/buyer-centre" className="rounded-2xl border border-white px-8 py-4 font-bold text-white">
+            <Link
+              href="/buyer-centre"
+              className="rounded-2xl border border-white px-8 py-4 font-bold text-white"
+            >
               {t.buyerCentre}
             </Link>
 
-            <Link href="/factory-signup" className="rounded-2xl bg-yellow-400 px-8 py-4 font-bold text-slate-900">
+            <Link
+              href="/factory-signup"
+              className="rounded-2xl bg-yellow-400 px-8 py-4 font-bold text-slate-900"
+            >
               {t.registerFactory}
             </Link>
           </div>
@@ -119,16 +95,21 @@ const t = translations[language];
             {t.searchTitle}
           </h2>
 
-          <p className="mt-2 text-slate-600">
-            {t.searchText}
-          </p>
+          <p className="mt-2 text-slate-600">{t.searchText}</p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-4">
-            <input className="rounded-2xl border p-4" placeholder="Search product e.g. T-shirt, Denim" />
-            <input className="rounded-2xl border p-4" placeholder="Factory location" />
+            <input
+              className="rounded-2xl border p-4"
+              placeholder={t.productPlaceholder}
+            />
+
+            <input
+              className="rounded-2xl border p-4"
+              placeholder={t.locationPlaceholder}
+            />
 
             <select className="rounded-2xl border p-4">
-              <option>Certification</option>
+              <option>{t.certification}</option>
               <option>WRAP</option>
               <option>BSCI</option>
               <option>SEDEX</option>
@@ -136,8 +117,11 @@ const t = translations[language];
               <option>OEKO-TEX</option>
             </select>
 
-            <Link href="/factories" className="rounded-2xl bg-green-700 p-4 text-center font-bold text-white">
-              Search Factories
+            <Link
+              href="/factories"
+              className="rounded-2xl bg-green-700 p-4 text-center font-bold text-white"
+            >
+              {t.searchFactories}
             </Link>
           </div>
         </div>
@@ -145,28 +129,28 @@ const t = translations[language];
 
       <section className="mx-auto max-w-7xl px-6 py-16">
         <h2 className="mb-10 text-center text-4xl font-bold">
-          Bangladesh Apparel Industry
+          {t.industryTitle}
         </h2>
 
         <div className="grid gap-6 md:grid-cols-4">
           <div className="rounded-3xl bg-white p-8 shadow">
             <h3 className="text-5xl font-bold text-green-700">4,200+</h3>
-            <p className="mt-3 text-lg">Active RMG Factories</p>
+            <p className="mt-3 text-lg">{t.activeFactories}</p>
           </div>
 
           <div className="rounded-3xl bg-white p-8 shadow">
             <h3 className="text-5xl font-bold text-green-700">3,723</h3>
-            <p className="mt-3 text-lg">Export-Oriented Units</p>
+            <p className="mt-3 text-lg">{t.exportUnits}</p>
           </div>
 
           <div className="rounded-3xl bg-white p-8 shadow">
             <h3 className="text-5xl font-bold text-green-700">4M+</h3>
-            <p className="mt-3 text-lg">Industry Workforce</p>
+            <p className="mt-3 text-lg">{t.workforce}</p>
           </div>
 
           <div className="rounded-3xl bg-white p-8 shadow">
             <h3 className="text-5xl font-bold text-green-700">260+</h3>
-            <p className="mt-3 text-lg">LEED Green Factories</p>
+            <p className="mt-3 text-lg">{t.greenFactories}</p>
           </div>
         </div>
       </section>
@@ -174,21 +158,23 @@ const t = translations[language];
       <section className="bg-green-50 py-16">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="mb-6 text-4xl font-bold">
-            Bangladesh Apparel Industry Leadership
+            {t.leadershipTitle}
           </h2>
 
           <p className="mb-10 max-w-5xl text-lg text-slate-700">
-            Bangladesh has more than 4,200 active Ready-Made Garment factories,
-            including 3,723 export-oriented manufacturing units. The sector
-            employs over 4 million workers and is represented by BGMEA and
-            BKMEA. Bangladesh also leads globally in sustainable manufacturing
-            with more than 260 USGBC LEED-certified green garment factories.
+            {t.leadershipText}
           </p>
 
           <div className="grid gap-6 md:grid-cols-3">
             {leadershipCards.map((item) => (
-              <div key={item.title} className="rounded-3xl bg-white p-8 shadow">
-                <h3 className="text-3xl font-bold text-green-700">{item.title}</h3>
+              <div
+                key={item.title}
+                className="rounded-3xl bg-white p-8 shadow"
+              >
+                <h3 className="text-3xl font-bold text-green-700">
+                  {item.title}
+                </h3>
+
                 <p className="mt-4 text-slate-700">{item.text}</p>
               </div>
             ))}
@@ -197,10 +183,12 @@ const t = translations[language];
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16">
-        <h2 className="mb-10 text-4xl font-bold">What Factories Can Do</h2>
+        <h2 className="mb-10 text-4xl font-bold">
+          {t.factoryActionsTitle}
+        </h2>
 
         <div className="grid gap-6 md:grid-cols-4">
-          {factoryActions.map((item) => (
+          {t.factoryActions.map((item) => (
             <div key={item} className="rounded-3xl bg-white p-8 shadow">
               <div className="mb-4 text-5xl">✅</div>
               <h3 className="text-xl font-bold">{item}</h3>
@@ -211,11 +199,16 @@ const t = translations[language];
 
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-10 text-4xl font-bold">Factory Categories</h2>
+          <h2 className="mb-10 text-4xl font-bold">
+            {t.factoryCategoriesTitle}
+          </h2>
 
           <div className="grid gap-6 md:grid-cols-4">
-            {categories.map((item) => (
-              <div key={item} className="rounded-3xl border bg-slate-50 p-8 shadow-sm">
+            {t.categories.map((item) => (
+              <div
+                key={item}
+                className="rounded-3xl border bg-slate-50 p-8 shadow-sm"
+              >
                 <div className="mb-4 text-5xl">🏭</div>
                 <h3 className="text-2xl font-bold">{item}</h3>
               </div>
@@ -225,10 +218,10 @@ const t = translations[language];
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16">
-        <h2 className="mb-10 text-4xl font-bold">Accessories Ecosystem</h2>
+        <h2 className="mb-10 text-4xl font-bold">{t.accessoriesTitle}</h2>
 
         <div className="grid gap-6 md:grid-cols-4">
-          {accessories.map((item) => (
+          {t.accessories.map((item) => (
             <div key={item} className="rounded-3xl bg-white p-8 shadow">
               <div className="mb-4 text-5xl">📦</div>
               <h3 className="text-2xl font-bold">{item}</h3>
@@ -239,50 +232,35 @@ const t = translations[language];
 
       <section className="bg-green-50 py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-6 text-4xl font-bold">Global Buyer Centre</h2>
-
+          <h2 className="mb-6 text-4xl font-bold">{t.buyerCentreTitle}</h2>
           <p className="max-w-4xl text-lg text-slate-700">
-            International buyers can search factories, submit sourcing
-            enquiries, discover product categories and connect directly with
-            verified Bangladesh suppliers.
+            {t.buyerCentreText}
           </p>
         </div>
       </section>
 
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-6 text-4xl font-bold">Bangladesh Textile Heritage</h2>
-
+          <h2 className="mb-6 text-4xl font-bold">{t.heritageTitle}</h2>
           <p className="max-w-5xl text-lg text-slate-700">
-            Bangladesh possesses one of the world&apos;s oldest textile
-            traditions. From muslin and handloom weaving to modern sustainable
-            manufacturing, the country continues a centuries-old legacy of
-            craftsmanship, innovation and global trade.
+            {t.heritageText}
           </p>
         </div>
       </section>
 
       <section className="bg-slate-900 py-16 text-white">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-6 text-4xl font-bold">
-            AI Factory Intelligence by MBNCON
-          </h2>
-
+          <h2 className="mb-6 text-4xl font-bold">{t.mbnconTitle}</h2>
           <p className="max-w-4xl text-lg text-slate-300">
-            Factory profitability, productivity, bottleneck analysis,
-            forecasting, operational excellence and executive intelligence
-            dashboards.
+            {t.mbnconText}
           </p>
         </div>
       </section>
 
       <section className="bg-green-800 py-12 text-white">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold">BangladeshApparel.com</h2>
-
-          <p className="mt-3">
-            Connecting Bangladesh Apparel Industry with Global Markets.
-          </p>
+          <h2 className="text-3xl font-bold">{t.footerTitle}</h2>
+          <p className="mt-3">{t.footerText}</p>
         </div>
       </section>
     </main>
