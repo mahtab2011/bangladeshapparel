@@ -188,13 +188,72 @@ export default function HomePage() {
         </h2>
 
         <div className="grid gap-6 md:grid-cols-4">
-          {t.factoryActions.map((item) => (
-            <div key={item} className="rounded-3xl bg-white p-8 shadow">
-              <div className="mb-4 text-5xl">✅</div>
-              <h3 className="text-xl font-bold">{item}</h3>
-            </div>
-          ))}
-        </div>
+
+  <Link
+    href="/factory-signup"
+    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+  >
+    <div className="mb-4 text-5xl">✅</div>
+    <h3 className="text-xl font-bold">{t.factoryActions[0]}</h3>
+  </Link>
+
+  <Link
+    href="/factory-media"
+    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+  >
+    <div className="mb-4 text-5xl">✅</div>
+    <h3 className="text-xl font-bold">{t.factoryActions[1]}</h3>
+  </Link>
+
+  <Link
+    href="/factory-certificates"
+    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+  >
+    <div className="mb-4 text-5xl">✅</div>
+    <h3 className="text-xl font-bold">{t.factoryActions[2]}</h3>
+  </Link>
+
+  <Link
+    href="/buyer-enquiries"
+    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+  >
+    <div className="mb-4 text-5xl">✅</div>
+    <h3 className="text-xl font-bold">{t.factoryActions[3]}</h3>
+  </Link>
+
+  <Link
+    href="/factory-analytics"
+    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+  >
+    <div className="mb-4 text-5xl">✅</div>
+    <h3 className="text-xl font-bold">{t.factoryActions[4]}</h3>
+  </Link>
+
+  <Link
+    href="/production-capacity"
+    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+  >
+    <div className="mb-4 text-5xl">✅</div>
+    <h3 className="text-xl font-bold">{t.factoryActions[5]}</h3>
+  </Link>
+
+  <Link
+    href="/product-categories"
+    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+  >
+    <div className="mb-4 text-5xl">✅</div>
+    <h3 className="text-xl font-bold">{t.factoryActions[6]}</h3>
+  </Link>
+
+  <Link
+    href="/export-credibility"
+    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+  >
+    <div className="mb-4 text-5xl">✅</div>
+    <h3 className="text-xl font-bold">{t.factoryActions[7]}</h3>
+  </Link>
+
+</div>
       </section>
 
       <section className="bg-white py-16">
