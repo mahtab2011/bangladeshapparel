@@ -25,13 +25,15 @@ export default function LanguageSelector() {
 }
 
   const languages = [
-    { code: "en", label: "English" },
-    { code: "bn", label: "বাংলা" },
-    { code: "ar", label: "العربية" },
-    { code: "fr", label: "Français" },
-    { code: "de", label: "Deutsch" },
-    { code: "es", label: "Español" },
-  ];
+  { code: "en", label: "English" },
+  { code: "bn", label: "বাংলা" },
+  { code: "ar", label: "العربية" },
+  { code: "fr", label: "Français" },
+  { code: "de", label: "Deutsch" },
+  { code: "es", label: "Español" },
+  { code: "ru", label: "Русский" },
+  { code: "ja", label: "日本語" },
+];
 
   return (
     <div className="rounded-2xl bg-white p-4 shadow">
