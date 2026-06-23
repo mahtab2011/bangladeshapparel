@@ -182,108 +182,98 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+<section className="mx-auto max-w-7xl px-6 py-16">
+  <h2 className="mb-10 text-4xl font-bold">
+    {t.factoryActionsTitle}
+  </h2>
 
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <h2 className="mb-10 text-4xl font-bold">
-          {t.factoryActionsTitle}
-        </h2>
+  <div className="grid gap-6 md:grid-cols-4">
 
-        <div className="grid gap-6 md:grid-cols-4">
-
-  <Link
-    href="/factory-signup"
-    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
-  >
-    <div className="mb-4 text-5xl">✅</div>
-    <h3 className="text-xl font-bold">{t.factoryActions[0]}</h3>
-  </Link>
-
-  <Link
-    href="/factory-signup"
-    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
-  >
-    <div className="mb-4 text-5xl">✅</div>
-    <h3 className="text-xl font-bold">{t.factoryActions[1]}</h3>
-  </Link>
-
-  <Link
-    href="/factory-signup"
-    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
-  >
-    <div className="mb-4 text-5xl">✅</div>
-    <h3 className="text-xl font-bold">{t.factoryActions[2]}</h3>
-  </Link>
-
-  <Link
-    href="/buyer-enquiry"
-    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
-  >
-    <div className="mb-4 text-5xl">✅</div>
-    <h3 className="text-xl font-bold">{t.factoryActions[3]}</h3>
-  </Link>
-
-  <Link
-    href="/factories/demo-factory"
-    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
-  >
-    <div className="mb-4 text-5xl">✅</div>
-    <h3 className="text-xl font-bold">{t.factoryActions[4]}</h3>
-  </Link>
-
-  <Link
-    href="/factories/demo-factory"
-    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
-  >
-    <div className="mb-4 text-5xl">✅</div>
-    <h3 className="text-xl font-bold">{t.factoryActions[5]}</h3>
-  </Link>
-
-  <Link
-    href="/product-categories"
-    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
-  >
-    <div className="mb-4 text-5xl">✅</div>
-    <h3 className="text-xl font-bold">{t.factoryActions[6]}</h3>
-  </Link>
-
-  <Link
-    href="/factories/demo-factory"
-    className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
-  >
-    <div className="mb-4 text-5xl">✅</div>
-    <h3 className="text-xl font-bold">{t.factoryActions[7]}</h3>
-  </Link>
+```
 <Link
-  href="/admin-dashboard/buyer-requests"
+  href="/factory-signup"
   className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
 >
-  <div className="mb-4 text-5xl">📊</div>
+  <div className="mb-4 text-5xl">🏭</div>
   <h3 className="text-xl font-bold">
-    Buyer Request Dashboard
+    {t.factoryActions[0]}
   </h3>
 </Link>
+
 <Link
-  href="/buyer-country-intelligence"
+  href="/factory-signup"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">📷</div>
+  <h3 className="text-xl font-bold">
+    {t.factoryActions[1]}
+  </h3>
+</Link>
+
+<Link
+  href="/factory-signup"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">📜</div>
+  <h3 className="text-xl font-bold">
+    {t.factoryActions[2]}
+  </h3>
+</Link>
+
+<Link
+  href="/buyer-enquiry"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">🤝</div>
+  <h3 className="text-xl font-bold">
+    {t.factoryActions[3]}
+  </h3>
+</Link>
+
+<Link
+  href="/factories/demo-factory"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">📈</div>
+  <h3 className="text-xl font-bold">
+    {t.factoryActions[4]}
+  </h3>
+</Link>
+
+<Link
+  href="/factories/demo-factory"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">🏗️</div>
+  <h3 className="text-xl font-bold">
+    {t.factoryActions[5]}
+  </h3>
+</Link>
+
+<Link
+  href="/product-categories"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">🧥</div>
+  <h3 className="text-xl font-bold">
+    {t.factoryActions[6]}
+  </h3>
+</Link>
+
+<Link
+  href="/factories"
   className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
 >
   <div className="mb-4 text-5xl">🌍</div>
   <h3 className="text-xl font-bold">
-    Buyer Country Intelligence
+    Factory Directory
   </h3>
 </Link>
+```
 
-<Link
-  href="/command-centre"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">🎯</div>
-  <h3 className="text-xl font-bold">
-    Command Centre
-  </h3>
-</Link>
+  </div>
+</section>
 
-</div>
-      </section>
 
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
@@ -326,15 +316,38 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+<section className="mx-auto max-w-7xl px-6 py-16">
+  <div className="rounded-3xl bg-white p-8 shadow">
+    <h2 className="text-4xl font-bold text-green-800">
+      Multilingual Buyer Communication
+    </h2>
 
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-6 text-4xl font-bold">{t.heritageTitle}</h2>
-          <p className="max-w-5xl text-lg text-slate-700">
-            {t.heritageText}
-          </p>
-        </div>
-      </section>
+    <p className="mt-4 max-w-5xl text-lg leading-8 text-slate-700">
+      International buyers can submit sourcing enquiries in their own
+      language. Bangladesh factories can view the enquiry translated into
+      English or Bangla, prepare their reply in English or Bangla, and use
+      AI-assisted translation to respond in the buyer's preferred language.
+      Factories may reply through the Bangladesh Apparel platform or send
+      translated responses directly by email.
+    </p>
+  </div>
+</section>
+     <section className="bg-white py-16">
+  <div className="mx-auto max-w-7xl px-6">
+    <h2 className="mb-6 text-4xl font-bold">{t.heritageTitle}</h2>
+
+    <p className="max-w-5xl text-lg text-slate-700">
+      {t.heritageText}
+    </p>
+
+    <Link
+      href="/heritage"
+      className="mt-6 inline-block rounded-2xl bg-amber-800 px-6 py-3 font-bold text-white hover:bg-amber-900"
+    >
+      Explore Bangladesh Textile Heritage
+    </Link>
+  </div>
+</section>
 
       <section className="bg-slate-900 py-16 text-white">
         <div className="mx-auto max-w-7xl px-6">

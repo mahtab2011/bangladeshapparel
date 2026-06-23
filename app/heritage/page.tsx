@@ -11,14 +11,19 @@ export default function HeritagePage() {
         "Jamdani weaving represents one of Bangladesh's most sophisticated textile traditions, combining artistic design with skilled handloom execution.",
     },
     {
-      title: "Handloom Intelligence",
+      title: "Textile Algorithms & Early Programmable Logic",
       description:
-        "Traditional Bengali weaving often followed highly structured design logic, pattern memory and repeat systems that can be understood as an early form of algorithmic craftsmanship.",
+        "Long before modern computers, Bengal's weaving traditions used structured pattern systems, thread sequencing, colour control, and repeat logic to create complex designs. At its most fundamental level, weaving operates through binary decisions — threads are raised or lowered to create patterns. Similar concepts later influenced programmable textile machinery such as the Jacquard loom, whose punched-card control systems became one of the historical inspirations for early computing.",
     },
     {
       title: "Modern Apparel Transformation",
       description:
-        "Bangladesh has transformed from a historic textile civilisation into one of the world's leading apparel manufacturing hubs.",
+        "Bangladesh has transformed from a historic textile civilisation into one of the world's leading apparel manufacturing hubs, serving global buyers through scale, skill, compliance and production discipline.",
+    },
+    {
+      title: "From Handloom to Industry 4.0",
+      description:
+        "Bangladesh's textile journey now spans from ancient handloom craftsmanship to AI-assisted manufacturing, sustainability leadership, digital supply chains, and advanced apparel production serving more than 150 global markets.",
     },
   ];
 
@@ -30,10 +35,14 @@ export default function HeritagePage() {
             Bangladesh Textile Heritage
           </h1>
 
-          <p className="mt-6 max-w-4xl text-xl text-amber-100">
-            From muslin and Jamdani to modern export apparel, Bangladesh carries
-            a centuries-old textile legacy of craftsmanship, design intelligence
-            and global trade.
+          <p className="mt-6 max-w-5xl text-xl text-amber-100">
+            Many people associate algorithms only with computers. However, long
+            before digital computers existed, textile production used structured
+            instruction systems to control patterns, colours, and thread
+            movements. The textile industry was one of the inspirations behind
+            programmable machines and ultimately modern computing. Bangladesh
+            inherits part of that remarkable textile tradition through Muslin,
+            Jamdani, and centuries of weaving excellence.
           </p>
         </div>
       </section>
@@ -64,12 +73,28 @@ export default function HeritagePage() {
           </h2>
 
           <p className="mt-4 max-w-5xl leading-8 text-slate-700">
-            Bangladesh is not only a low-cost manufacturing destination. It is a
-            textile nation with deep historical knowledge, skilled hands,
-            production discipline and an evolving industrial base. This heritage
-            can strengthen the national apparel brand and support premium,
-            sustainable and design-led sourcing.
+            Bangladesh is not only a competitive manufacturing destination. It
+            is a textile nation with deep historical knowledge, skilled hands,
+            production discipline, design intelligence and an evolving
+            industrial base. This heritage can strengthen the national apparel
+            brand and support premium, sustainable, technology-enabled and
+            design-led sourcing.
           </p>
+        </section>
+
+        <section className="mt-8 rounded-3xl bg-amber-50 p-8 shadow">
+          <h2 className="text-3xl font-bold text-amber-900">
+            Bangladesh's Continuing Legacy
+          </h2>
+
+          <ul className="mt-6 space-y-3 leading-8 text-slate-700">
+            <li>• Muslin — one of history's finest textiles</li>
+            <li>• Jamdani — globally recognized weaving heritage</li>
+            <li>• Handloom intelligence — structured pattern logic and craftsmanship</li>
+            <li>• Green manufacturing — sustainability-led apparel production</li>
+            <li>• Digital transformation — AI, analytics and Industry 4.0 readiness</li>
+            <li>• Global exports — serving more than 150 international markets</li>
+          </ul>
         </section>
       </section>
     </main>
