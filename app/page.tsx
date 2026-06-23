@@ -44,6 +44,57 @@ export default function HomePage() {
     },
   ];
 
+  const publicCards = [
+    {
+      title: "Factory Directory",
+      href: "/factories",
+      icon: "🏭",
+      text: "Explore Bangladesh garment manufacturers and verified factory profiles.",
+    },
+    {
+      title: "Buyer Enquiry",
+      href: "/buyer-enquiry",
+      icon: "🤝",
+      text: "Submit sourcing enquiries directly to Bangladesh apparel suppliers.",
+    },
+    {
+      title: "Sustainability",
+      href: "/sustainability-centre",
+      icon: "🌱",
+      text: "Discover green factories, LEED leadership and responsible manufacturing.",
+    },
+    {
+      title: "Innovation",
+      href: "/innovation",
+      icon: "💡",
+      text: "Explore digital manufacturing, automation and future-ready apparel capability.",
+    },
+    {
+      title: "Workforce Skills",
+      href: "/workforce-skills",
+      icon: "👷",
+      text: "Learn about Bangladesh's skilled apparel workforce and production discipline.",
+    },
+    {
+      title: "Investment",
+      href: "/investment",
+      icon: "📈",
+      text: "View investment opportunities in Bangladesh apparel, textiles and accessories.",
+    },
+    {
+      title: "Textile Heritage",
+      href: "/heritage",
+      icon: "🧵",
+      text: "Discover Muslin, Jamdani and Bangladesh's deep textile innovation legacy.",
+    },
+    {
+      title: "Accessories Suppliers",
+      href: "/accessories",
+      icon: "📦",
+      text: "Explore trims, labels, buttons, zippers, cartons and packaging suppliers.",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-slate-50">
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white">
@@ -69,20 +120,19 @@ export default function HomePage() {
             </Link>
 
             <Link
-              href="/buyer-centre"
+              href="/buyer-enquiry"
               className="rounded-2xl border border-white px-8 py-4 font-bold text-white"
             >
-              {t.buyerCentre}
+              Submit Buyer Enquiry
             </Link>
 
             <Link
-              href="/factory-signup"
+              href="/heritage"
               className="rounded-2xl bg-yellow-400 px-8 py-4 font-bold text-slate-900"
             >
-              {t.registerFactory}
+              Textile Heritage
             </Link>
           </div>
-       
         </div>
       </section>
 
@@ -182,98 +232,32 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-<section className="mx-auto max-w-7xl px-6 py-16">
-  <h2 className="mb-10 text-4xl font-bold">
-    {t.factoryActionsTitle}
-  </h2>
 
-  <div className="grid gap-6 md:grid-cols-4">
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <h2 className="mb-10 text-4xl font-bold">
+          Explore Bangladesh Apparel
+        </h2>
 
-```
-<Link
-  href="/factory-signup"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">🏭</div>
-  <h3 className="text-xl font-bold">
-    {t.factoryActions[0]}
-  </h3>
-</Link>
+        <div className="grid gap-6 md:grid-cols-4">
+          {publicCards.map((card) => (
+            <Link
+              key={card.title}
+              href={card.href}
+              className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+            >
+              <div className="mb-4 text-5xl">{card.icon}</div>
 
-<Link
-  href="/factory-signup"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">📷</div>
-  <h3 className="text-xl font-bold">
-    {t.factoryActions[1]}
-  </h3>
-</Link>
+              <h3 className="text-xl font-bold text-green-800">
+                {card.title}
+              </h3>
 
-<Link
-  href="/factory-signup"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">📜</div>
-  <h3 className="text-xl font-bold">
-    {t.factoryActions[2]}
-  </h3>
-</Link>
-
-<Link
-  href="/buyer-enquiry"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">🤝</div>
-  <h3 className="text-xl font-bold">
-    {t.factoryActions[3]}
-  </h3>
-</Link>
-
-<Link
-  href="/factories/demo-factory"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">📈</div>
-  <h3 className="text-xl font-bold">
-    {t.factoryActions[4]}
-  </h3>
-</Link>
-
-<Link
-  href="/factories/demo-factory"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">🏗️</div>
-  <h3 className="text-xl font-bold">
-    {t.factoryActions[5]}
-  </h3>
-</Link>
-
-<Link
-  href="/product-categories"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">🧥</div>
-  <h3 className="text-xl font-bold">
-    {t.factoryActions[6]}
-  </h3>
-</Link>
-
-<Link
-  href="/factories"
-  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
->
-  <div className="mb-4 text-5xl">🌍</div>
-  <h3 className="text-xl font-bold">
-    Factory Directory
-  </h3>
-</Link>
-```
-
-  </div>
-</section>
-
+              <p className="mt-3 text-slate-600">
+                {card.text}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
@@ -316,38 +300,40 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-<section className="mx-auto max-w-7xl px-6 py-16">
-  <div className="rounded-3xl bg-white p-8 shadow">
-    <h2 className="text-4xl font-bold text-green-800">
-      Multilingual Buyer Communication
-    </h2>
 
-    <p className="mt-4 max-w-5xl text-lg leading-8 text-slate-700">
-      International buyers can submit sourcing enquiries in their own
-      language. Bangladesh factories can view the enquiry translated into
-      English or Bangla, prepare their reply in English or Bangla, and use
-      AI-assisted translation to respond in the buyer's preferred language.
-      Factories may reply through the Bangladesh Apparel platform or send
-      translated responses directly by email.
-    </p>
-  </div>
-</section>
-     <section className="bg-white py-16">
-  <div className="mx-auto max-w-7xl px-6">
-    <h2 className="mb-6 text-4xl font-bold">{t.heritageTitle}</h2>
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="rounded-3xl bg-white p-8 shadow">
+          <h2 className="text-4xl font-bold text-green-800">
+            Multilingual Buyer Communication
+          </h2>
 
-    <p className="max-w-5xl text-lg text-slate-700">
-      {t.heritageText}
-    </p>
+          <p className="mt-4 max-w-5xl text-lg leading-8 text-slate-700">
+            International buyers can submit sourcing enquiries in their own
+            language. Bangladesh factories can view the enquiry translated into
+            English or Bangla, prepare their reply in English or Bangla, and use
+            AI-assisted translation to respond in the buyer's preferred language.
+            Factories may reply through the Bangladesh Apparel platform or send
+            translated responses directly by email.
+          </p>
+        </div>
+      </section>
 
-    <Link
-      href="/heritage"
-      className="mt-6 inline-block rounded-2xl bg-amber-800 px-6 py-3 font-bold text-white hover:bg-amber-900"
-    >
-      Explore Bangladesh Textile Heritage
-    </Link>
-  </div>
-</section>
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="mb-6 text-4xl font-bold">{t.heritageTitle}</h2>
+
+          <p className="max-w-5xl text-lg text-slate-700">
+            {t.heritageText}
+          </p>
+
+          <Link
+            href="/heritage"
+            className="mt-6 inline-block rounded-2xl bg-amber-800 px-6 py-3 font-bold text-white hover:bg-amber-900"
+          >
+            Explore Bangladesh Textile Heritage
+          </Link>
+        </div>
+      </section>
 
       <section className="bg-slate-900 py-16 text-white">
         <div className="mx-auto max-w-7xl px-6">
