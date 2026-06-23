@@ -62,7 +62,7 @@ const factoryModules = [
     href: "/sustainability-centre",
     icon: "🌱",
     description:
-      "Highlight green manufacturing, LEED status, ETP systems and responsible production.",
+      "Show LEED certification, ETP systems, renewable energy initiatives, water management, waste recycling programmes and participation in Bangladesh's circular textile economy including recycling clusters in Pabna and Sirajganj.",
   },
 ];
 
@@ -112,12 +112,15 @@ export default function FactoryCentrePage() {
             Role-Based Access Note
           </h2>
 
-          <p className="mt-4 max-w-5xl leading-8 text-slate-700">
-            In the full production system, this Factory Centre will be available
-            only to approved factories, BGMEA administrators and authorised
-            industry managers. The public website will remain focused on buyers,
-            investors and Bangladesh apparel promotion.
-          </p>
+         <p className="mt-4 max-w-5xl leading-8 text-slate-700">
+  In the full production system, this Factory Centre will be available
+  only to approved factories, BGMEA administrators and authorised
+  industry managers. The public website will remain focused on buyers,
+  investors and Bangladesh apparel promotion. Future modules will
+  include buyer communication, AI-assisted translation, sustainability
+  reporting, recycling participation tracking, export intelligence and
+  factory performance analytics.
+</p>
         </div>
       </section>
     </main>
