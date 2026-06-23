@@ -82,6 +82,7 @@ export default function HomePage() {
               {t.registerFactory}
             </Link>
           </div>
+       
         </div>
       </section>
 
@@ -198,7 +199,7 @@ export default function HomePage() {
   </Link>
 
   <Link
-    href="/factory-media"
+    href="/factory-signup"
     className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
   >
     <div className="mb-4 text-5xl">✅</div>
@@ -206,7 +207,7 @@ export default function HomePage() {
   </Link>
 
   <Link
-    href="/factory-certificates"
+    href="/factory-signup"
     className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
   >
     <div className="mb-4 text-5xl">✅</div>
@@ -214,7 +215,7 @@ export default function HomePage() {
   </Link>
 
   <Link
-    href="/buyer-enquiries"
+    href="/buyer-enquiry"
     className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
   >
     <div className="mb-4 text-5xl">✅</div>
@@ -222,7 +223,7 @@ export default function HomePage() {
   </Link>
 
   <Link
-    href="/factory-analytics"
+    href="/factories/demo-factory"
     className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
   >
     <div className="mb-4 text-5xl">✅</div>
@@ -230,7 +231,7 @@ export default function HomePage() {
   </Link>
 
   <Link
-    href="/production-capacity"
+    href="/factories/demo-factory"
     className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
   >
     <div className="mb-4 text-5xl">✅</div>
@@ -246,12 +247,40 @@ export default function HomePage() {
   </Link>
 
   <Link
-    href="/export-credibility"
+    href="/factories/demo-factory"
     className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
   >
     <div className="mb-4 text-5xl">✅</div>
     <h3 className="text-xl font-bold">{t.factoryActions[7]}</h3>
   </Link>
+<Link
+  href="/admin-dashboard/buyer-requests"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">📊</div>
+  <h3 className="text-xl font-bold">
+    Buyer Request Dashboard
+  </h3>
+</Link>
+<Link
+  href="/buyer-country-intelligence"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">🌍</div>
+  <h3 className="text-xl font-bold">
+    Buyer Country Intelligence
+  </h3>
+</Link>
+
+<Link
+  href="/command-centre"
+  className="rounded-3xl bg-white p-8 shadow hover:shadow-xl"
+>
+  <div className="mb-4 text-5xl">🎯</div>
+  <h3 className="text-xl font-bold">
+    Command Centre
+  </h3>
+</Link>
 
 </div>
       </section>
